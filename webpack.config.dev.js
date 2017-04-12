@@ -13,7 +13,7 @@ export default {
         filename: 'bundle.js'
     },
     plugins: [
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
@@ -25,5 +25,8 @@ export default {
                 loaders: ['babel-loader']
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true,
     }
 }
